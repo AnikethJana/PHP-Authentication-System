@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Stream</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script src="https://content.jwplatform.com/libraries/SAHhwvZq.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>VIDEO STREAM</h1>
+        <div id="video-container">
+            <div class="server-overlay">
+                <span>Server:</span>
+                <select id="serverDropdown" class="server-overlay-select"></select>
+            </div>
+            <div id="video">
+                <div id="loading-indicator">
+                    <div class="loader"></div>
+                    <span>Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="webpage-selection">
+            <h3>Alternative Webpages</h3>
+            <select id="webpageDropdown" class="webpage-selection-dropdown">
+                <option value="">Select a webpage</option>
+            </select>
+            <button id="gotoWebpageBtn" class="webpage-goto-btn" disabled>Go to Webpage</button>
+        </div>
+    </div>
+
+    <div id="telegram-notification" class="notification">
+        <div class="notification-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#0088cc">
+                <path
+                    d="M12,2C6.48,2,2,6.48,2,12s4.48,10,10,10s10-4.48,10-10S17.52,2,12,2z M16.64,8.8c-0.15,1.58-0.8,5.42-1.13,7.19 c-0.14,0.75-0.42,1-0.68,1.02c-0.58,0.05-1.02-0.38-1.58-0.75c-0.88-0.58-1.38-0.94-2.23-1.5c-0.99-0.65-0.35-1.01,0.22-1.59 c0.15-0.15,2.71-2.48,2.76-2.69c0.01-0.03,0.01-0.13-0.05-0.18c-0.06-0.05-0.14-0.03-0.21-0.02c-0.09,0.02-1.49,0.95-4.22,2.79 c-0.4,0.27-0.76,0.41-1.08,0.4c-0.36-0.01-1.04-0.2-1.55-0.37c-0.63-0.2-1.12-0.31-1.08-0.66c0.02-0.18,0.27-0.36,0.74-0.55 c2.92-1.27,4.86-2.11,5.83-2.51c2.77-1.16,3.35-1.36,3.73-1.36c0.08,0,0.27,0.02,0.39,0.12c0.1,0.08,0.13,0.19,0.14,0.27 C16.63,8.48,16.65,8.6,16.64,8.8z" />
+            </svg>
+        </div>
+        <div class="notification-content">
+            <div class="notification-title">Join Our Telegram Channel</div>
+            <div class="notification-message">Get instant updates, daily live links and more!</div>
+            <div class="notification-actions">
+                <button class="notification-btn join-btn" onclick="window.open('ADD_YOUR_URL', '_blank')">Join
+                    Now</button>
+                <button class="notification-btn dismiss-btn" onclick="dismissNotification()">Later</button>
+            </div>
+        </div>
+        <button class="close-btn" onclick="closeNotification()">✕</button>
+    </div>
+
+    <script src="scripts/script.js" defer></script>
+
+</body>
+
+</html>
